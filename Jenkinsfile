@@ -34,4 +34,8 @@ node {
             }
         }
     }
+    stage("Wait")
+    {
+        sh 'sleep 60'
+    }
 }
