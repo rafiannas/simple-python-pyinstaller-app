@@ -21,6 +21,10 @@ node {
             }
         }
     }
+    stage("Manual Approval")
+    {
+        input "Lanjutkan ke tahap Deploy?"
+    }
     stage("Deploy"){
         agent {
             docker {
