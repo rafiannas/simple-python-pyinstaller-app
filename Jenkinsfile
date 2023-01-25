@@ -1,5 +1,5 @@
 node {
-    stage('Build'){
+    stage('Build.'){
         agent {
             
             docker {
@@ -8,7 +8,7 @@ node {
             
         }
     }
-    stage('Test'){
+    stage('Test.'){
         agent {
             docker {
                 image 'qnib/pytest'
@@ -21,11 +21,11 @@ node {
             }
         }
     }
-    stage("Manual Approval")
+    stage("Manual Approval.")
     {
         input "Lanjutkan ke tahap Deploy?"
     }
-    stage("Deploy"){
+    stage("Deploy."){
         agent {
             docker {
                   image 'cdrx/pyinstaller-linux:python2'
@@ -38,7 +38,7 @@ node {
             }
         }
     }
-    stage("Wait")
+    stage("Waiting")
     {
         sh 'sleep 60'
     }
